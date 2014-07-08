@@ -1,0 +1,106 @@
+<h2 class="center"> Add New Student </h2>
+
+<form action="/create_student" >
+  
+  <!-- student section -->
+
+<div class="container">
+  <div class="row">
+    <div class="page-header" >
+
+      <h1> <input type="text" name="name" placeholder="Name"> <small> <input type="text" name="grade" placeholder="Grade"> </small></h1> 
+    </div>
+              
+    
+      <div class="col-md-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Class Specific Accomodations/Modifications</h3>
+          </div>
+          <div class="panel-body">
+            <ol class="li"><strong>Math:</strong> <input type="text" name="mathAccom" placeholder="Math Accomodations"> </ol>
+            <ol class="li"> <strong>ELA:</strong> <input type="text" name="engAccom" placeholder="English Accomodations"> </ol>
+            <ol class="li"> <strong>Science:</strong> <input type="text" name="sciAccom" placeholder="Science Accomodations"> </ol>
+            <ol class="li"> <strong>Social Studies:</strong> <input type="text" name="socstudAccom" placeholder="Social Studies Accomodations"> </ol>
+            <ol class="li"> <strong>Transitions:</strong> <input type="text" name="transitionAccom" placeholder="Transition Accomodations"> </ol>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Contact Information</h3>
+          </div>
+          <div class="panel-body">
+            <ol class="li"><strong>Parent:</strong> <input type="text" name="parentContact" placeholder="Parent Contact #"></ol>
+            <ol class="li"><strong>Case Manager:</strong> <input type="text" name="caseContact" placeholder="Case Manager Contact #"></ol>
+            <ol class="li"><strong>Counselor:</strong> <input type="text" name="counselorContact" placeholder="Counselor Contact #"></ol>
+            <ol class="li"><strong>Clinicians:</strong> <input type="text" name="clinContact" placeholder="Clinician Contact #"></ol>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4"> 
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Behavior Interventions and Tracker</h3>
+          </div>
+          <div class="panel-body">
+            <ol class="li"><strong>All Day:</strong> <input type="text" name="behaviorAll" placeholder="All Day Behavior Plans"></ol>
+            <ol class="li"><strong>Class Specific:</strong> <input type="text" name="behaviorSpecial" placeholder="Class Specific Behavior Plans"></ol>
+            <ol class="li"><strong>Behavior Tracker:</strong> <input type="text" name="behaviorTrack" placeholder="Behavior Tracker?"></ol>
+          </div>
+              
+        
+        </div>
+     
+  </div>
+</div>
+  
+ 
+<!-- student section 2 bottom row -->
+    
+
+
+
+  <div class="row"> 
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Grade Level Info and IEP Goals</h3>
+        </div>
+        <div class="panel-body">
+          <ol class="li"><strong>Math:</strong> <input type="text" name="mathLvl" placeholder="NWEA Math Level"> <strong>Goal:</strong><input type="text" name="mathGoal" placeholder="IEP Math Goal"></ol>
+          <ol class="li"><strong>Writing:</strong> <input type="text" name="writingLvl" placeholder="NWEA ELA Level"> <strong>Goal:</strong><input type="text" name="writingGoal" placeholder="IEP ELA Goal"></ol>
+          <ol class="li"><strong>Functional Behavior:</strong>  <input type="text" name="functionalLvl" placeholder="Functional level"> <strong>Goal:</strong> <input type="text" name="functionalGoal" placeholder="IEP Functional Goal"></ol>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title"> </h3>
+
+          <form action='' class="form-inline" role="form">
+            <div class="form-group">
+              
+            </div>
+            <div class="form-group">
+              
+            </div>
+          </form>  
+
+        </div>
+
+        <div class="panel-body">
+         
+
+
+        </div>
+      </div>
+
+  <input type="submit" value="Add student to database">
+         
+</form>  

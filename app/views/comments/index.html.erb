@@ -1,0 +1,31 @@
+<h1>Comments</h1>
+
+<p><a href="/new_comment">Add a New Comment</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Teacher</th>
+      <th>Student</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @comments.each do |comment| %>
+    <tr>
+          <td><%= comment.description %></td>
+          <td><%= comment.teacher_id %></td>
+          <td><%= comment.student_id %></td>
+          <td><a href="/comments/<%= comment.id %>">Show</a>
+        </td>
+      <td><a href="/comments/<%= comment.id %>/edit">Edit</a></td>
+      <td><a href="/comments/<%= comment.id %>/destroy">Destroy</a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

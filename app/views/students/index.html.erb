@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <h1 class='center' > List of Students </h1>
+    <h3 class='center'> <a href="/new_student"> <small> Add a New Student </small>  </a> </h3>
+
+    <form action="/students">
+      <div class="center"> Filter by grade 
+        <select name="grade_filter">
+          <% @students.each do |student| %>
+          <option value=" <%= student.grade %>"> <%= student.grade %> </option>
+          <% end %>
+        </select>
+        <input type="submit">
+      </div>
+      <div class="row">
+        <% @students.each do |student| %>
+        <div class="col-md-6 col-md-offset-3">
+          <div class="well well-xsm">
+            <a href="/students/<%= student.id %>"> <%= student.name %> </a> <%= student.grade %>  
+          </div>
+        </div>
+        <% end %>
+      </div>
+      </div>

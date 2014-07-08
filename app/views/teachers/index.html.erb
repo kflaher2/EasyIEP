@@ -1,0 +1,31 @@
+<h1>Teachers</h1>
+
+<p><a href="/new_teacher">Add a New Teacher</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Subject</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @teachers.each do |teacher| %>
+    <tr>
+          <td><%= teacher.name %></td>
+          <td><%= teacher.email %></td>
+          <td><%= teacher.subject %></td>
+          <td><a href="/teachers/<%= teacher.id %>">Show</a>
+        </td>
+      <td><a href="/teachers/<%= teacher.id %>/edit">Edit</a></td>
+      <td><a href="/teachers/<%= teacher.id %>/destroy">Destroy</a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

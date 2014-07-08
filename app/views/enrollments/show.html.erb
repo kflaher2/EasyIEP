@@ -1,0 +1,21 @@
+<h1>Enrollment #<%= @enrollment.id %></h1>
+
+<div>
+  <strong>Subject</strong>:<br />
+  <p><%= @enrollment.subject %></p>
+</div>
+<div>
+  <strong>Period</strong>:<br />
+  <p><%= @enrollment.period %></p>
+</div>
+<div>
+  <strong>Teacher</strong>:<br />
+  <p><%= @enrollment.teacher_id %></p>
+</div>
+<div>
+  <strong>Student</strong>:<br />
+  <p><%= @enrollment.student_id %></p>
+</div>
+
+<a href="/enrollments/<%= @enrollment.id %>/edit">Edit</a> |
+<a href="/enrollments/<%= @enrollment.id %>/destroy">Destroy</a>

@@ -1,0 +1,112 @@
+<h2 class="center"> Editing <%= @student.name %>'s Page! </h2>
+
+<form action="/students/<%= @student.id %>/update">
+
+  <div class="container">
+    <div class="row">
+      <div class="page-header">
+
+      <h1> <input type="text" name="name" placeholder="Name" value="<%= @student.name %>"> <small> <input type="text" name="grade" placeholder="Grade" value="<%= @student.grade %>"> </small></h1> 
+      
+      </div>
+
+      
+        <div class="col-md-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Class Specific Accomodations/Modifications</h3>
+            </div>
+            <div class="panel-body">
+              <ol class="li"><strong>Math:</strong> <input type="text" name="mathAccom" placeholder="Math Accomodations" value="<%= @student.mathAccom %>"> </ol>
+              <ol class="li"> <strong>ELA:</strong> <input type="text" name="elaAccom" placeholder="English Accomodations" value="<%= @student.elaAccom %>"> </ol>
+              <ol class="li"> <strong>Science:</strong> <input type="text" name="sciAccom" placeholder="Science Accomodations" value="<%= @student.sciAccom %>"> </ol>
+              <ol class="li"> <strong>Social Studies:</strong> <input type="text" name="socstudAccom" placeholder="Social Studies Accomodations" value="<%= @student.socstudAccom %>"> </ol>
+              <ol class="li"> <strong>Transitions:</strong> <input type="text" name="transitionAccom" placeholder="Transition Accomodations" value="<%= @student.transitionAccom %>"> </ol>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Contact Information</h3>
+            </div>
+            <div class="panel-body">
+              <ol class="li"><strong>Parent:</strong> <input type="text" name="parentContact" placeholder="Parent Contact #" value="<%= @student.parentContact %>"> </ol>
+              <ol class="li"><strong>Case Manager:</strong> <input type="text" name="caseContact" placeholder="Case Manager Contact #" value="<%= @student.caseContact %>"></ol>
+              <ol class="li"><strong>Counselor:</strong> <input type="text" name="counselorContact" placeholder="Counselor Contact #" value="<%= @student.counselorContact %>"></ol>
+              <ol class="li"><strong>Clinicians:</strong> <input type="text" name="clinContact" placeholder="Clinician Contact #" value="<%= @student.clinContact %>"></ol>
+
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4"> <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Behavior Interventions and Tracker</h3>
+          </div>
+          <div class="panel-body">
+            <ol class="li"><strong>All Day:</strong> <input type="text" name="behaviorAll" placeholder="All Day Behavior Plans" value="<%= @student.behaviorAll %>"></ol>
+            <ol class="li"><strong>Class Specific:</strong> <input type="text" name="behaviorSpecial" placeholder="Class Specific Behavior Plans" value="<%= @student.behaviorSpecial %>"></ol>
+            <ol class="li"><strong>Behavior Tracker:</strong> <input type="text" name="behaviorTrack" placeholder="Behavior Tracker?" value="<%= @student.behaviorTrack %>"></ol>
+          </div>
+
+
+          </div>
+
+
+        
+      </div>
+    </div>
+
+
+    <!-- student section 2 bottom row -->
+
+  
+
+
+      <div class="row"> 
+        <div class="col-md-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Grade Level Info and IEP Goals</h3>
+            </div>
+            <div class="panel-body">
+              <ol class="li"><strong>Math:</strong> <input type="text" name="mathLvl" placeholder="NWEA Math Level" value="<%= @student.mathLvl %>"> <strong>Goal:</strong><input type="text" name="mathGoal" placeholder="IEP Math Goal" value="<%= @student.mathGoal %>"></ol>
+              <ol class="li"><strong>Writing:</strong> <input type="text" name="writingLvl" placeholder="NWEA ELA Level" value="<%= @student.writingLvl %>"> <strong>Goal:</strong><input type="text" name="writingGoal" placeholder="IEP ELA Goal" value="<%= @student.writingGoal %>"></ol>
+              <ol class="li"><strong>Functional Behavior:</strong> <input type="text" name="functionalLvl" placeholder="Functional level" value="<%= @student.functionalLvl %>"> <strong>Goal:</strong> <input type="text" name="functionalGoal" placeholder="IEP Functional Goal" value="<%= @student.functionalGoal %>"></ol>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+
+                <form class="form-inline" role="form">
+                  <div class="form-group">
+                    <input class="form-control" type="text" placeholder="What has been working for you?" />
+                  </div>
+                  <div class="form-group">
+                    <button class="btn btn-default">Submit</button>
+                  </div>
+                </form>  
+
+                </div>
+              </h3>
+            <div class="panel-body">
+              <ol class="li">Teacher Comments Here</ol>
+              <ol class="li">Parent Comments here</ol>
+              <ol class="li">Counselor Comments here</ol>
+              <ol class="li">Clinicians Comments here</ol>
+
+
+            </div>
+          
+
+        </div>  
+
+        <input type="submit" value="Submit Changes">
+        <br>
+        <br>
+        <br>

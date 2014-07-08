@@ -1,0 +1,25 @@
+<h1>Editing Enrollment #<%= @enrollment.id %></h1>
+
+<form action="/enrollments/<%= @enrollment.id %>/update">
+  <div>
+    <label for="subject">subject</label><br />
+    <input id="subject" name="subject" value="<%= @enrollment.subject  %>" type="text" />
+  </div>
+  <div>
+    <label for="period">period</label><br />
+    <input id="period" name="period" value="<%= @enrollment.period  %>" type="text" />
+  </div>
+  <div>
+    <label for="teacher_id">teacher_id</label><br />
+    <input id="teacher_id" name="teacher_id" value="<%= @enrollment.teacher_id  %>" type="text" />
+  </div>
+  <div>
+    <label for="student_id">student_id</label><br />
+    <input id="student_id" name="student_id" value="<%= @enrollment.student_id  %>" type="text" />
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
+
+

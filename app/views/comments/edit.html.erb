@@ -1,0 +1,21 @@
+<h1>Editing Comment #<%= @comment.id %></h1>
+
+<form action="/comments/<%= @comment.id %>/update">
+  <div>
+    <label for="description">description</label><br />
+    <input id="description" name="description" value="<%= @comment.description  %>" type="text" />
+  </div>
+  <div>
+    <label for="teacher_id">teacher_id</label><br />
+    <input id="teacher_id" name="teacher_id" value="<%= @comment.teacher_id  %>" type="text" />
+  </div>
+  <div>
+    <label for="student_id">student_id</label><br />
+    <input id="student_id" name="student_id" value="<%= @comment.student_id  %>" type="text" />
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
+
+

@@ -1,0 +1,108 @@
+<!-- student section -->
+
+<div class="container">
+  <div class="row">
+    <div class="page-header" >
+
+      <h1> <%= @student.name %> <small> <%= @student.grade %> </small></h1> 
+        <a href="/students/<%= @student.id %>/edit"> EDIT </a> ||
+        <a href="/students/<%= @student.id %>/destroy"> DELETE</a>
+    </div>
+              
+    
+      <div class="col-md-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Class Specific Accomodations/Modifications</h3>
+          </div>
+          <div class="panel-body">
+            <ol class="li"><strong>Math:</strong> <%= @student.mathAccom %> </ol>
+            <ol class="li"> <strong>ELA:</strong> <%= @student.elaAccom %> </ol>
+            <ol class="li"> <strong>Science:</strong> <%= @student.sciAccom %> </ol>
+            <ol class="li"> <strong>Social Studies:</strong> <%= @student.socstudAccom %> </ol>
+            <ol class="li"> <strong>Transitions:</strong> <%= @student.transitionAccom %> </ol>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Contact Information</h3>
+          </div>
+          <div class="panel-body">
+            <ol class="li"><strong>Parent:</strong> <%= @student.parentContact %></ol>
+            <ol class="li"><strong>Case Manager:</strong> <%= @student.caseContact %></ol>
+            <ol class="li"><strong>Counselor:</strong> <%= @student.counselorContact %></ol>
+            <ol class="li"><strong>Clinicians:</strong> <%= @student.clinContact %></ol>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4"> 
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Behavior Interventions and Tracker</h3>
+          </div>
+          <div class="panel-body">
+            <ol class="li"><strong>All Day:</strong> <%= @student.behaviorAll %></ol>
+            <ol class="li"><strong>Class Specific:</strong> <%= @student.behaviorSpecial %></ol>
+            <ol class="li"><strong>Behavior Tracker:</strong> <%= @student.behaviorTrack %></ol>
+          </div>
+              
+        
+        </div>
+     
+  </div>
+</div>
+  
+ 
+<!-- student section 2 bottom row -->
+    
+
+
+
+  <div class="row"> 
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Grade Level Info and IEP Goals</h3>
+        </div>
+        <div class="panel-body">
+          <ol class="li"><strong>Math:</strong> <%= @student.mathLvl %> <strong>Goal:</strong><%= @student.mathGoal %></ol>
+          <ol class="li"><strong>Writing:</strong> <%= @student.writingLvl %> <strong>Goal:</strong><%= @student.writingGoal %></ol>
+          <ol class="li"><strong>Functional Behavior:</strong> <%= @student.functionalLvl %> <strong>Goal:</strong> <%= @student.functionalGoal %></ol>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title"> </h3>
+
+          <form action='/create_comment' class="form-inline" role="form">
+            <div class="form-group">
+              <input class="form-control" type="string" name="description" placeholder="What has been working for you?" size="85em">
+              <input type="hidden" name="student_id" value="<%= @student.id %>">
+              <input type="hidden" name="teacher_id" value="1">
+            </div>
+            <div class="form-group">
+              <button class="btn btn-default">Submit</button>
+            </div>
+          </form>  
+
+        </div>
+
+        <div class="panel-body">
+          <ul>
+            <% @comments.each do |comment| %>
+            <li> <%= comment.description %>
+              <% end %>
+          </ul>    
+
+
+        </div>
+      </div>
+
+

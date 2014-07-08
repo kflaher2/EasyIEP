@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class='col-md-10'>
+      
+      <h2>  <%= @teacher.name %> | <%= @teacher.email %> | <%= @teacher.subject %> </h2>
+       
+
+
+      <a href="/teachers/<%= @teacher.id %>/edit">Edit</a> |
+      <a href="/teachers/<%= @teacher.id %>/destroy">Destroy</a>
+    </div>
+  </div>  
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Teacher Comments</h3>
+           </div>
+            <div class="panel-body">
+              <ul>
+                <% @comment.each do |comment| %>
+                <li> <strong> <%= comment.student.name %> </strong> - <%= comment.description %> </li>
+               <% end %>
+              </ul>
+          </div>
+        </div>
+      </div>
+   
+
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Teacher classes</h3>
+          </div>
+          <div class="panel-body">
+            <ul>
+              <% @enrollment.each do |enrollment| %>
+              <li>  <%= enrollment.student.name %> </li>
+            <% end %>
+            </ul>
+              </div>
+        </div>
+      </div>
+    
+  </div>
+</div>
+  
+  
+  
+  

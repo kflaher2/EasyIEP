@@ -1,0 +1,17 @@
+<h1>Comment #<%= @comment.id %></h1>
+
+<div>
+  <strong>Description</strong>:<br />
+  <p><%= @comment.description %></p>
+</div>
+<div>
+  <strong>Teacher</strong>:<br />
+  <p><%= @comment.teacher_id %></p>
+</div>
+<div>
+  <strong>Student</strong>:<br />
+  <p><%= @comment.student_id %></p>
+</div>
+
+<a href="/comments/<%= @comment.id %>/edit">Edit</a> |
+<a href="/comments/<%= @comment.id %>/destroy">Destroy</a>
