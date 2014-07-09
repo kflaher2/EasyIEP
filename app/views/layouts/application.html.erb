@@ -49,8 +49,14 @@
           </ul>
         </li>
         <li>
-          <a href="/session/new"> Sign In</a>
-          Yo, <%= session['username'] %>
+          <% if session['teacher_id'] %>
+            <% u = Teacher.find_by_id(session['teacher_id'])  %>
+           <a href="/sessions/destroy">Sign Out </a>
+          You are signed in, <%= u.name %>!
+          <% else %>
+          <a href="/sessions/new"> Sign In</a> 
+          <% end %>
+         
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
-  get '/session/new' => 'sessions#new'
-  get '/session/create' => 'sessions#create'
+  get '/sessions/new' => 'sessions#new'
+  get '/sessions/create' => 'sessions#create'
+  get '/sessions/destroy' => 'sessions#destroy'
   # Routes for the Student resource:
   # CREATE
   get '/new_student' => 'students#new'

@@ -1,5 +1,13 @@
 class TeachersController < ApplicationController
-
+  
+  before_action :check_if_signed_in, only: ['show', 'edit', 'update', 'destroy']
+  
+  def check_if_signed_in
+       if session[:teacher_id].to_i != params[:id].to_i
+      redirect_to "/sessions/new"
+    end
+  end
+  
   def index
     @teachers = Teacher.all
   end
@@ -8,6 +16,7 @@ class TeachersController < ApplicationController
     @teacher = Teacher.find_by(id: params[:id])
     @comment = Comment.where(teacher_id: @teacher.id).order('created_at DESC')
     @enrollment = Enrollment.where(teacher_id: @teacher.id)
+ 
   end
 
   def new
@@ -18,6 +27,8 @@ class TeachersController < ApplicationController
     @teacher.name = params[:name]
     @teacher.email = params[:email]
     @teacher.subject = params[:subject]
+    @teacher.password = params[:password]
+    @teacher.password_confirmation = params[:password_confirmation]
 
     if @teacher.save
       redirect_to "/teachers/#{ @teacher.id }"
@@ -35,6 +46,8 @@ class TeachersController < ApplicationController
     @teacher.name = params[:name]
     @teacher.email = params[:email]
     @teacher.subject = params[:subject]
+    @teacher.password = params[:password]
+    @teacher.password_confirmation = params[:password_confirmation]
 
     if @teacher.save
       redirect_to "/teachers/#{ @teacher.id }"

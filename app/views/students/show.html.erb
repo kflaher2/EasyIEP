@@ -85,7 +85,8 @@
             <div class="form-group">
               <input class="form-control" type="string" name="description" placeholder="What has been working for you?" size="85em">
               <input type="hidden" name="student_id" value="<%= @student.id %>">
-              <input type="hidden" name="teacher_id" value="1">
+              <% u = Teacher.find_by_id(session['teacher_id']) %>
+              <input type="hidden" name="teacher_id" value="<%= u.id %>">
             </div>
             <div class="form-group">
               <button class="btn btn-default">Submit</button>
@@ -97,7 +98,7 @@
         <div class="panel-body">
           <ul>
             <% @comments.each do |comment| %>
-            <li> <%= comment.description %>
+            <li> <strong><%= comment.teacher.name %> </strong> - <%= comment.description %>
               <% end %>
           </ul>    
 

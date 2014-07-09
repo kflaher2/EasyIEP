@@ -1,6 +1,9 @@
 <h1> Sign In </h1>
-<form action="/session/create">
-  <label for="username">Username: </label>
-  <input id="username" type="text" placeholder="your username here" name="username">
+<h3> <%= notice %> </h3>
+<form action="/sessions/create">
+  <label for="email">Sign In Using Your E-Mail: </label>
+  <input id="email" type="text" placeholder="your email here" name="email">
+  <label for="password">Password: </label>
+  <input id="password" type="password" placeholder="your password here" name="password">
   <input type="submit">
 </form>

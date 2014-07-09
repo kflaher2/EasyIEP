@@ -20,10 +20,6 @@ class StudentsController < ApplicationController
       render 'index'
     end
     
-    if params['grade_filter']
-      @students = Student.where(grade: params['grade_filter'])
-    end
-    
   end
   
 
