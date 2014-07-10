@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # READ
   get '/students' => 'students#index'
   get '/students/:id' => 'students#show'
+  get '/students/:id/allcomments' => 'students#allcomments'
 
   # UPDATE
   get '/students/:id/edit' => 'students#edit'
@@ -62,6 +63,7 @@ Rails.application.routes.draw do
   # READ
   get '/teachers' => 'teachers#index'
   get '/teachers/:id' => 'teachers#show'
+  get 'teachers/:id/allcomments' => 'teachers#allcomments'
 
   # UPDATE
   get '/teachers/:id/edit' => 'teachers#edit'

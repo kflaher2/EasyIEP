@@ -1,5 +1,10 @@
 class StudentsController < ApplicationController
 
+  def allcomments
+     @student = Student.find_by(id: params[:id])
+    @comments = Comment.where(student_id: @student.id).order('created_at DESC')
+  end
+  
   def index
     search = params['search']
     

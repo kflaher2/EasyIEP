@@ -7,8 +7,8 @@
        
 
 
-      <a href="/teachers/<%= @teacher.id %>/edit">Edit</a> |
-      <a href="/teachers/<%= @teacher.id %>/destroy">Destroy</a>
+      <a href="/teachers/<%= @teacher.id %>/edit">Edit</a><% if session[:teacher_id] == 1 %> |
+      <a href="/teachers/<%= @teacher.id %>/destroy">Destroy</a> <% end %>
     </div>
   </div>  
 
@@ -16,39 +16,69 @@
     <div class="col-md-6">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h3 class="panel-title">Teacher Comments</h3>
-           </div>
-            <div class="panel-body">
-              <ul>
-                <% @comment.each do |comment| %>
-                <li> <strong> <%= comment.student.name %> </strong> - <%= comment.description %> </li>
-               <% end %>
-              </ul>
-          </div>
-        </div>
-      </div>
-   
-
-
-  <div class="row">
-    <div class="col-md-6">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Teacher classes</h3>
+          <h3 class="panel-title">My Students</h3>
           </div>
           <div class="panel-body">
             <ul>
               <% @enrollment.each do |enrollment| %>
-              <li>  <%= enrollment.student.name %> </li>
+              <li> <a href="/students/<%= enrollment.student.id %>">  <%= enrollment.student.name %> </a> | <%= enrollment.subject %> | Period <%= enrollment.period %></li>
             <% end %>
             </ul>
               </div>
         </div>
       </div>
-    
+    <div class="col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Teacher Comments</h3>
+           </div>
+            <div class="panel-body">
+              <ul>
+                <% @comment.sort_by{|t| - t.created_at.to_i}.first(10).each do |comment| %>
+                <li><a href="/students/<%= comment.student.id %>"> <strong> <%= comment.student.name %> </strong></a> - <%= comment.description %> </li>
+               <% end %>
+              </ul>
+              <a href="/teachers/<%= @teacher.id %>/allcomments" > See all comments </a>
+          </div>
+        </div>
+      </div>
   </div>
-</div>
-  
-  
-  
-  
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Add a student to your roster</h3>
+          </div>
+          <div class="panel-body">  
+            <form action="/create_enrollment">
+              <div>
+                <label for="period">period</label><br />
+                <input id="period" name="period" type="text" />
+              </div>
+              <div>
+                <label for="subject">subject</label><br />
+                <input id="subject" name="subject" type="text" />
+              </div>
+              <div>
+                <input id="teacher_id" name="teacher_id" type="hidden" value="<%= params['id'] %>" />
+              </div>
+              <label for="name" >Student Name  </label> <br>
+                  <select name="student_id">
+                    <% @students.each do |student| %>
+                    <option value="<%= student.id %>">   <%= student.name %> </option>
+                    
+
+                      <% end %>
+                  </select>
+              <br> <br>
+             
+              <div>
+                <input type="submit">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+

@@ -5,8 +5,11 @@
     <div class="page-header" >
 
       <h1> <%= @student.name %> <small> <%= @student.grade %> </small></h1> 
-        <a href="/students/<%= @student.id %>/edit"> EDIT </a> ||
+      <% if session[:teacher_id] == 1 %>
+      
+      <a href="/students/<%= @student.id %>/edit"> EDIT </a> ||
         <a href="/students/<%= @student.id %>/destroy"> DELETE</a>
+      <% end %>
     </div>
               
     
@@ -90,6 +93,7 @@
             </div>
             <div class="form-group">
               <button class="btn btn-default">Submit</button>
+              
             </div>
           </form>  
 
@@ -97,12 +101,12 @@
 
         <div class="panel-body">
           <ul>
-            <% @comments.each do |comment| %>
-            <li> <strong><%= comment.teacher.name %> </strong> - <%= comment.description %>
+            <% @comments.sort_by{|t| - t.created_at.to_i}.first(10).each do |comment| %>
+            <li> <strong><%= comment.created_at.strftime('%b %d') %> -<a href="/teachers/<%= comment.teacher.id %>"> <%= comment.teacher.name %></a> </strong> - <%= comment.description %>
               <% end %>
           </ul>    
 
-
+          <a href="/students/<%= @student.id %>/allcomments" > See all comments </a>
         </div>
       </div>
 

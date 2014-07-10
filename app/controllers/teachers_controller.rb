@@ -12,10 +12,17 @@ class TeachersController < ApplicationController
     @teachers = Teacher.all
   end
 
+   def allcomments
+     @student = Student.find_by(id: params[:id])
+     @teacher = Teacher.find_by(id: params[:id])
+     @comments = Comment.where(teacher_id: @teacher.id).order('created_at DESC')
+  end
+  
   def show
     @teacher = Teacher.find_by(id: params[:id])
     @comment = Comment.where(teacher_id: @teacher.id).order('created_at DESC')
     @enrollment = Enrollment.where(teacher_id: @teacher.id)
+    @students = Student.all
  
   end
 

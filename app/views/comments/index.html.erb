@@ -22,8 +22,10 @@
           <td><%= comment.student_id %></td>
           <td><a href="/comments/<%= comment.id %>">Show</a>
         </td>
+      <% if session[:teacher_id] == 1 %>
       <td><a href="/comments/<%= comment.id %>/edit">Edit</a></td>
       <td><a href="/comments/<%= comment.id %>/destroy">Destroy</a></td>
+      <% end %>
     </tr>
   <% end %>
   </tbody>

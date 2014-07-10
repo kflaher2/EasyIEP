@@ -16,10 +16,11 @@ class EnrollmentsController < ApplicationController
     @enrollment.subject = params[:subject]
     @enrollment.period = params[:period]
     @enrollment.teacher_id = params[:teacher_id]
+    #     Student.find_by_name([student.name].id)
     @enrollment.student_id = params[:student_id]
 
     if @enrollment.save
-      redirect_to "/enrollments/#{ @enrollment.id }"
+      redirect_to "/teachers/#{ @enrollment.teacher_id }"
     else
       render 'new'
     end

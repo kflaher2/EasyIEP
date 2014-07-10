@@ -16,6 +16,7 @@
   <strong>Student</strong>:<br />
   <p><%= @enrollment.student_id %></p>
 </div>
-
+<% if session[:teacher_id] == 1 %>
 <a href="/enrollments/<%= @enrollment.id %>/edit">Edit</a> |
 <a href="/enrollments/<%= @enrollment.id %>/destroy">Destroy</a>
+<% end %>

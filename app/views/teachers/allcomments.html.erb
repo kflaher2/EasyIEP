@@ -1,0 +1,30 @@
+ <div class="col-md-8">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title"> See all of <%= @teacher.name %>'s comments </h3> <br>
+
+          <form action='/create_comment' class="form-inline" role="form">
+            <div class="form-group">
+              <input class="form-control" type="string" name="description" placeholder="What has been working for you?" size="85em">
+              <input type="hidden" name="student_id" value="<%= @student.id %>">
+              <% u = Teacher.find_by_id(session['teacher_id']) %>
+              <input type="hidden" name="teacher_id" value="<%= u.id %>">
+            </div>
+            <div class="form-group">
+              <button class="btn btn-default">Submit</button>
+              
+            </div>
+          </form>  
+
+        </div>
+
+        <div class="panel-body">
+          <ul>
+            <% @comments.each do |comment| %>
+            <li> <strong><%= comment.created_at.strftime('%b %d') %> - <a href="/students/<%= comment.student.id %>"><%= comment.student.name %> </a></strong> - <%= comment.description %>
+              <% end %>
+          </ul>    
+
+       
+        </div>
+      </div>

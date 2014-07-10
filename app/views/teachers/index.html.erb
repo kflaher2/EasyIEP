@@ -1,31 +1,20 @@
-<h1>Teachers</h1>
 
-<p><a href="/new_teacher">Add a New Teacher</a></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Subject</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="container">
+  <div class="row">
+    <h1 class='center' > List of Teachers </h1>
+    <h3 class='center'> <a href="/new_teacher"> <small> Add a New Teacher </small>  </a> </h3>
 
-  <tbody>
-  <% @teachers.each do |teacher| %>
-    <tr>
-          <td><%= teacher.name %></td>
-          <td><%= teacher.email %></td>
-          <td><%= teacher.subject %></td>
-          <td><a href="/teachers/<%= teacher.id %>">Show</a>
-        </td>
-      <td><a href="/teachers/<%= teacher.id %>/edit">Edit</a></td>
-      <td><a href="/teachers/<%= teacher.id %>/destroy">Destroy</a></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-
+   
+      <div class="row">
+        <% @teachers.each do |teacher| %>
+        <div class="col-md-6 col-md-offset-3">
+          <div class="well well-xsm">
+            <a href="/teachers/<%= teacher.id %>"> <%= teacher.name %> </a> <%= teacher.subject %>  
+          </div>
+        </div>
+        <% end %>
+      </div>
+      </div>
+  
+  
