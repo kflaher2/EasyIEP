@@ -107,4 +107,8 @@ class StudentsController < ApplicationController
 
     redirect_to "/students"
   end
+  
+  def home
+    
+  end
 end

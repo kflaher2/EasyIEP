@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/create_student' => 'students#create'
 
   # READ
+  get '/' => 'students#home'
   get '/students' => 'students#index'
   get '/students/:id' => 'students#show'
   get '/students/:id/allcomments' => 'students#allcomments'

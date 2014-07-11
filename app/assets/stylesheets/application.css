@@ -42,3 +42,10 @@
   padding: 5px;
   text-align: center;
 }
+
+.jumbotron {background-color: lightsteelblue;}
+
+.signin {background-color: lightsteelblue;
+          border-color: darkblue;
+          border-width: double;
+}
