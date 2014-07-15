@@ -20,9 +20,15 @@ class TeachersController < ApplicationController
   
   def show
     @teacher = Teacher.find_by(id: params[:id])
-    @comment = Comment.where(teacher_id: @teacher.id).order('created_at DESC')
-    @enrollment = Enrollment.where(teacher_id: @teacher.id)
+    @comments = Comment.where(teacher_id: @teacher.id).order('created_at DESC')
+    @enrollments = Enrollment.where(teacher_id: @teacher.id)
     @students = Student.all
+    filter = params['period']
+    if filter
+      @enrollmentsfilter = Enrollment.where(teacher_id: @teacher.id, period: filter)
+    else
+      @enrollmentsfilter= @enrollments
+    end
  
   end
 

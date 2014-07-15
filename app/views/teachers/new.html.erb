@@ -1,28 +1,44 @@
-<h1>New Teacher</h1>
+<h1>Add New Teacher</h1>
 
-<form action="/create_teacher">
-  <div>
-    <label for="name">name</label><br />
-    <input id="name" name="name" type="text" />
+
+<div class="col-md-4">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Add a Teacher</h3>
+    </div>
+    <div class="panel-body">  
+      <form action="/create_teacher">
+        <div>
+          <label for="name">Name</label><br />
+          <input id="name" name="name" type="text" />
+        </div>
+        <div>
+          <label for="email">Email</label><br />
+          <input id="email" name="email" type="text" />
+        </div>
+        <div>
+          <label for="subject" >Subject  </label> <br>
+          <select name="subject" id="subject">
+            <option value="math"> Math </option>
+            <option value="ela"> ELA </option>
+            <option value="science"> Science </option>
+            <option value="social studies"> Social Studies </option>
+            <option value="all"> All Subjects </option>
+
+          </select>
+        </div>
+        <div>
+          <label for="password">password</label><br />
+          <input id="password" name="password" type="password" />
+        </div>
+        <div>
+          <label for="password_confirmation">password confirmation</label><br />
+          <input id="password_confirmation" name="password_confirmation" type="password" />
+        </div>
+        <input type="submit">
+        
+      </form>
   </div>
-  <div>
-    <label for="email">email</label><br />
-    <input id="email" name="email" type="text" />
-  </div>
-  <div>
-    <label for="subject">subject</label><br />
-    <input id="subject" name="subject" type="text" />
-  </div>
-  <div>
-    <label for="password">password</label><br />
-    <input id="password" name="password" type="password" />
-  </div>
-  <div>
-    <label for="password_confirmation">password confirmation</label><br />
-    <input id="password_confirmation" name="password_confirmation" type="password" />
-  </div>
-  <div>
-    <input type="submit">
-  </div>
-</form>
+</div>
+
 

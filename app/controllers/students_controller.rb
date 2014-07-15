@@ -17,6 +17,7 @@ class StudentsController < ApplicationController
         student = @students.first
         redirect_to "/students/#{ student.id }"
       else
+        @students = Student.all
         render 'index'
       end
       
